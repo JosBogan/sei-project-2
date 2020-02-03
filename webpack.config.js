@@ -1,8 +1,8 @@
+require('dotenv').config()
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const DotEnv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/app.js',
@@ -34,7 +34,7 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new DotEnv(),
+    new webpack.EnvironmentPlugin(['NASA_ACCESS_TOKEN']),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
