@@ -59,8 +59,4 @@ The main index page shows up to six of the closest asteroids to earth on the giv
 
 ## Extra Functionality
 
-Users are able to click on any of the asteroids displayerd and a popup will show with some randomly generated stats about the distance of that object to earth. 
-
-## Process 
-
-There were many 
+Users are able to click on any of the asteroids displayed and a popup will show with some randomly generated stats about the distance of that object to earth.
