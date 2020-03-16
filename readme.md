@@ -73,7 +73,7 @@ Users are able to click on any of the asteroids displayed and a popup will show 
 
 ## Featured Code
 
-The following code is part of the AsteroidCard component that renders an individual asteroid on the index page. As it was my first project utilizing React.js and JSX I was happy with how all of the conditional rendering came through. The array of asteroids is being mapped over and then for each one, this component is being rendered, with the asteroid data being passed down as props. There are also a couple of conditions to check if the asteroid passed down is the asteroid closest to earth on that day, which was passed down through the `large` prop
+The following code is part of the AsteroidCard component that renders an individual asteroid on the index page. As it was my first project utilizing React.js and JSX I was happy with how all of the conditional rendering came through. The array of asteroids is being mapped over and then for each one, this component is being rendered, with the asteroid data being passed down as props. There are also a couple of conditions to check if the asteroid passed down is the asteroid closest to earth on that day, which was passed down through the `large` prop.
 
 ```JSX
 render() {
