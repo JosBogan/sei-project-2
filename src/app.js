@@ -21,11 +21,12 @@ class App extends React.Component {
   async componentDidMount() {
     try {
       const res = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${nasaToken}`)
-      if (!res.data.hdurl) {
-        this.setState({ background: 'https://apod.nasa.gov/apod/image/2001/IntoTheShadow_apod.jpg' })
-      } else {
-        this.setState({ background: res.data.hdurl })
-      }
+      this.setState({ background: !res.data.hdurl ? 'https://apod.nasa.gov/apod/image/2001/IntoTheShadow_apod.jpg' : res.data.hdurl })
+      // if (!res.data.hdurl) {
+      //   this.setState({ background: 'https://apod.nasa.gov/apod/image/2001/IntoTheShadow_apod.jpg' })
+      // } else {
+      //   this.setState({ background: res.data.hdurl })
+      // }
     } catch (err) {
       console.log(err)
     }

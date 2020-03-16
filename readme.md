@@ -63,9 +63,55 @@ Users are able to click on any of the asteroids displayed and a popup will show 
 
 ## Process
 
-1. We spent the first couple of hours lookig through the public API's and deciding on one to use
-2. Tested the API end points in Insomnia and made sure that we could obtain and understood the data being pulled through
+1. We spent the first couple of hours looking through the public API's and deciding on one to use
+2. Tested the API endpoints in Insomnia and made sure that we could obtain and understood the data being pulled through
 3. We then started wireframing the design and functionality of the website.
 4. Started planning the code for each page and some high level pseudocoding.
 5. Built out the landing page and request functionality
 6. Developed the main index page of the application.
+
+# Reflections
+
+## Featured Code
+
+The following code is part of the Asteroid Card component that renders an individual asteroid on the index page. As it was my first project utilizing React.js and JSX I was happy with how all of the conditional rendering came through
+
+```
+render() {
+  const data = this.props.close_approach_data[0]
+  return (
+    <div onClick={this.calcDist} className="innerCardContainer dist_head">
+      <div className="Header">
+        <h2 className="is-size-4 has-text-weight-semibold">{this.props.large ? 'Danger' : 'Safe'}</h2>
+        {this.props.large && <p className="is-size-7">- Distance from you -</p>}
+        <h4 className="is-size-6 ">{parseInt(data.miss_distance.kilometers).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} km</h4>
+      </div>
+      <div className="rule"></div>
+      <div className="contentBox">
+        <h3><span className="has-text-weight-semibold">Name:</span> {this.props.name.replace(/[()]/gi, '')}</h3>
+        <h4><span className="has-text-weight-semibold">Size:</span> {(this.averageSize())} meters</h4>
+        <h4><span className="has-text-weight-semibold">Speed:</span> {parseInt(data.relative_velocity.kilometers_per_second)} km/s</h4>
+        <h4><span className="has-text-weight-semibold">Time:</span>  {
+          data.close_approach_date_full ? 
+            data.close_approach_date_full.split(' ')[1] :
+            'NA 😞'}</h4>
+      </div>
+    </div>
+  )
+}
+```
+
+## Wins
+
+I am very happy with how the project all came together. There were a couple of different ways that we could have routed the user from the landing page to the index page and sent a request to the API but the current set up allows users to not only enter the date in the inputs given but also works if the date is entered directly into the URL bar.
+
+## Challenges
+
+I think that the biggest challenge for us in this Project was getting to grips with the NASA NeoWs API. We got caught out on numerous occasions by the structure of the data sent and what the data actually represented. We also came across a couple of unexpected issues, one being that occasionally NASA's astrological picture of the day API sends a video instead of a picture, which would break our background. We managed to fix this with a simple check to see if the url of the link recieved through the data was to a video and setting a default image if the link if so.
+```
+this.setState({ background: !res.data.hdurl ? 'https://apod.nasa.gov/apod/image/2001/IntoTheShadow_apod.jpg' : res.data.hdurl })
+```
+
+Another proble, we came across was that for design purposes we chose not to use the date input picker but this means that we had to account for the format people would enter their dates. The NeoWs API requires a format of `2004-07-02` whilst the number input would allow for `2004-7-2`, which would get no data back from the API.
+
+## What Next
