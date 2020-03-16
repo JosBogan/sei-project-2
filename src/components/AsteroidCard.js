@@ -12,7 +12,6 @@ class AsteroidCard extends React.Component {
   calcDist = () => {
     const myColor = { background: '#FFFFFF', text: '#000000' }
     notify.show(DistanceFacts.comparisonGenerator(this.props.close_approach_data[0].miss_distance.kilometers), 'custom', 4000, myColor)
-    // DistanceFacts.comparisonGenerator(this.props.close_approach_data[0].miss_distance.kilometers)
   }
 
   render() {

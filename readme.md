@@ -2,7 +2,7 @@
 
 [Deployed Project Link](https://j-asteroid-catasteroid.herokuapp.com/)
 
-Asteroid was my second project at General Assembly. The main focus of this project was to help develop and practice React.js and AJAX requests/API consumption. This Project was a pair programming exercise done over 48 hours in a pair.
+Asteroid Catasteroid was my second project at General Assembly. The main focus of this project was to help develop and practice React.js and AJAX requests/API consumption. This Project was a pair programming exercise done over 48 hours in a pair.
 
 ## Task Brief
 
@@ -31,9 +31,9 @@ Asteroid was my second project at General Assembly. The main focus of this proje
 ## Installation
 
 * Clone or download the repo
-* In the project root install all of project the dependancies with `npm i` 
+* In the project root install all of project the dependencies with `npm i` 
 * In the project room run the command `npm run start`
-* Ensure the terminal respondes with 'app is listening on port 4000'
+* Ensure the terminal responds with 'app is listening on port 4000'
 * Open your chosen browser and navigate to `http://localhost:4000/`
 
 ## Overview
@@ -43,7 +43,7 @@ This project was my first experience of pair programming, using React.js and con
 # Walkthrough
 
 ## Landing Page
-The Landing page is the first page users see and has inputs for the user to enter a valid date. The background is pulled from the NASA Astronomical picture of the day API and so changes on a daily basis.
+The Landing page is the first page users see and has inputs for the user to enter a valid date. The background is pulled from the NASA Astronomy picture of the day API and so changes on a daily basis.
 
 ![Landing page](src/assets/readme/landing.png)
 
@@ -74,7 +74,7 @@ Users are able to click on any of the asteroids displayed and a popup will show 
 
 ## Featured Code
 
-The following code is part of the Asteroid Card component that renders an individual asteroid on the index page. As it was my first project utilizing React.js and JSX I was happy with how all of the conditional rendering came through. The array of Asteroids is being mapped over and then for each one, this component is being rendered, with the asteroid data being passed down as props. There are also a couple of conditions to check if the asteroid passed down is the aseroid closest to earth on that day, which was passed down through the `large` prop
+The following code is part of the AsteroidCard component that renders an individual asteroid on the index page. As it was my first project utilizing React.js and JSX I was happy with how all of the conditional rendering came through. The array of asteroids is being mapped over and then for each one, this component is being rendered, with the asteroid data being passed down as props. There are also a couple of conditions to check if the asteroid passed down is the asteroid closest to earth on that day, which was passed down through the `large` prop
 
 ```JSX
 render() {
@@ -107,13 +107,13 @@ I am very happy with how the project all came together. There were a couple of d
 
 ## Challenges
 
-I think that the biggest challenge for us in this Project was getting to grips with the NASA NeoWs API. We got caught out on numerous occasions by the structure of the data sent and what the data actually represented. We also came across a couple of unexpected issues, one being that occasionally NASA's astrological picture of the day API sends a video instead of a picture, which would break our background. We managed to fix this with a simple check to see if the url of the link recieved through the data was to a video and setting a default image if the link if so.
-```JSX
+I think that the biggest challenge for us in this Project was getting to grips with the NASA NeoWs API. We got caught out on numerous occasions by the structure of the data sent and what the data actually represented. We also came across a couple of unexpected issues, one being that occasionally NASA's Astronomy picture of the day API sends a video instead of a picture, which would break our background. We managed to fix this with a simple check to see if the url of the link recieved through the data was to a video and setting a default image if the link if so.
+```javascript
 this.setState({ background: !res.data.hdurl ? 'https://apod.nasa.gov/apod/image/2001/IntoTheShadow_apod.jpg' : res.data.hdurl })
 ```
 
-Another proble, we came across was that for design purposes we chose not to use the date input picker but this means that we had to account for the format people would enter their dates. The NeoWs API requires a format of `2004-07-02` whilst the number input would allow for `2004-7-2`, which would get no data back from the API.
+Another problem that we came across was that for design purposes we chose not to use the date input picker but this means that we had to account for the format people would enter their dates. The NeoWs API requires a format of `2004-07-02` whilst the number input would allow for `2004-7-2`, which would get no data back from the API.
 
 ## What Next
 
-Going further, 
+...
