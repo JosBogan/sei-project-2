@@ -59,7 +59,7 @@ class Fun extends React.Component {
       <p><i className="arrow left"></i></p>
     </div>
     <section>
-      <div className="big_boi">
+      <div className="main_asteroid">
         {this.state.top ? <AsteroidCard {...this.state.top} large={true}/> : ''}
       </div>
     </section>

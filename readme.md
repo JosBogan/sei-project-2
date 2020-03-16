@@ -60,3 +60,12 @@ The main index page shows up to six of the closest asteroids to earth on the giv
 ## Extra Functionality
 
 Users are able to click on any of the asteroids displayed and a popup will show with some randomly generated stats about the distance of that object to earth.
+
+## Process
+
+1. We spent the first couple of hours lookig through the public API's and deciding on one to use
+2. Tested the API end points in Insomnia and made sure that we could obtain and understood the data being pulled through
+3. We then started wireframing the design and functionality of the website.
+4. Started planning the code for each page and some high level pseudocoding.
+5. Built out the landing page and request functionality
+6. Developed the main index page of the application.
