@@ -116,3 +116,6 @@ Another problem that we came across was that for design purposes we chose not to
 ## What Next
 
 ...
+
+## Key Learnings
+
