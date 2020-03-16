@@ -74,9 +74,9 @@ Users are able to click on any of the asteroids displayed and a popup will show 
 
 ## Featured Code
 
-The following code is part of the Asteroid Card component that renders an individual asteroid on the index page. As it was my first project utilizing React.js and JSX I was happy with how all of the conditional rendering came through
+The following code is part of the Asteroid Card component that renders an individual asteroid on the index page. As it was my first project utilizing React.js and JSX I was happy with how all of the conditional rendering came through. The array of Asteroids is being mapped over and then for each one, this component is being rendered, with the asteroid data being passed down as props. There are also a couple of conditions to check if the asteroid passed down is the aseroid closest to earth on that day, which was passed down through the `large` prop
 
-```javaScript
+```JSX
 render() {
   const data = this.props.close_approach_data[0]
   return (
@@ -108,10 +108,12 @@ I am very happy with how the project all came together. There were a couple of d
 ## Challenges
 
 I think that the biggest challenge for us in this Project was getting to grips with the NASA NeoWs API. We got caught out on numerous occasions by the structure of the data sent and what the data actually represented. We also came across a couple of unexpected issues, one being that occasionally NASA's astrological picture of the day API sends a video instead of a picture, which would break our background. We managed to fix this with a simple check to see if the url of the link recieved through the data was to a video and setting a default image if the link if so.
-```javascript
+```JSX
 this.setState({ background: !res.data.hdurl ? 'https://apod.nasa.gov/apod/image/2001/IntoTheShadow_apod.jpg' : res.data.hdurl })
 ```
 
 Another proble, we came across was that for design purposes we chose not to use the date input picker but this means that we had to account for the format people would enter their dates. The NeoWs API requires a format of `2004-07-02` whilst the number input would allow for `2004-7-2`, which would get no data back from the API.
 
 ## What Next
+
+Going further, 
