@@ -53,7 +53,7 @@ The loading page that displays whilst the data is being retrieved.
 ![Loading](src/assets/readme/loading.png)
 
 ## Index Page
-The main index page shows up to six of the closest asteroids to earth on the given chosen day
+The main index page shows up to six of the closest asteroids to earth on the given chosen day.
 
 ![Loading](src/assets/readme/index.png)
 
@@ -61,8 +61,7 @@ The main index page shows up to six of the closest asteroids to earth on the giv
 
 Users are able to click on any of the asteroids displayed and a popup will show with some randomly generated stats about the distance of that object to earth.
 
-## Process
-
+## Process
 1. We spent the first couple of hours looking through the public API's and deciding on one to use
 2. Tested the API endpoints in Insomnia and made sure that we could obtain and understood the data being pulled through
 3. We then started wireframing the design and functionality of the website.
