@@ -100,6 +100,21 @@ render() {
 }
 ```
 
+Due to the heavily nested nature of the API we chose to use, trying to sort the asteroids by distance ended up being quite laborious. I am happy with how it turned out in the end however.
+
+```javascript
+sortData = (data) => {
+  const selectedDate = `${this.state.url}`
+  const newData = data[selectedDate].sort((a,b) => {
+    return (
+      parseInt(a.close_approach_data[0].miss_distance.kilometers) - parseInt(b.close_approach_data[0].miss_distance.kilometers)
+    )
+  })
+  newData.length = 6
+  return newData
+}
+```
+
 ## Wins
 
 I am very happy with how the project all came together. There were a couple of different ways that we could have routed the user from the landing page to the index page and sent a request to the API but the current set up allows users to not only enter the date in the inputs given but also works if the date is entered directly into the URL bar.
@@ -115,7 +130,13 @@ Another problem that we came across was that for design purposes we chose not to
 
 ## What Next
 
-...
+If I were to take this project further I would probably attempt to add more functionality to create a more robust application such as:
+
+* Allow for date ranges.
+* Add more calculations to allow for better calculations of the most dangerous asteroid in the list (currently it is just based on distance).
+* Add the ability to skip back or forwards one day easily
 
 ## Key Learnings
+
+My main take away from this project was one about pair programming. Having never had to really explain my reasoning or code to anyone else before, at the start I found it very difficult to vocalise what the logic I was thinking of. This project really opened my eyes to this and also how much it can help to have another person to bounce ideas off. 
 
