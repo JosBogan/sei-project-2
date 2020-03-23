@@ -121,7 +121,7 @@ I am very happy with how the project all came together. There were a couple of d
 
 ## Challenges
 
-I think that the biggest challenge for us in this Project was getting to grips with the NASA NeoWs API. We got caught out on numerous occasions by the structure of the data sent and what the data actually represented. We also came across a couple of unexpected issues, one being that occasionally NASA's Astronomy picture of the day API sends a video instead of a picture, which would break our background. We managed to fix this with a simple check to see if the url of the link recieved through the data was to a video and setting a default image if the link if so.
+I think that the biggest challenge for us in this Project was getting to grips with the NASA NeoWs API. We got caught out on numerous occasions by the structure of the data sent and what the data actually represented. We also came across a couple of unexpected issues, one being that occasionally NASA's Astronomy picture of the day API sends a video instead of a picture, which would break our background. We managed to fix this with a simple check to see if the url of the link received through the data was to a video and setting a default image if the link if so.
 ```javascript
 this.setState({ background: !res.data.hdurl ? 'https://apod.nasa.gov/apod/image/2001/IntoTheShadow_apod.jpg' : res.data.hdurl })
 ```
