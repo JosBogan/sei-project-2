@@ -24,11 +24,7 @@ class ErrorPage extends React.Component {
     </div>
     </>
     )
-  
-
   }
-  
-  
 }
 
 export default ErrorPage
