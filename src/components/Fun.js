@@ -16,6 +16,7 @@ class Fun extends React.Component {
 
   async componentDidMount() {
     try {
+      this.formatDate()
       const res = await axios.get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.state.url}&end_date=${this.state.url}&api_key=${nasaToken}`)
       this.setState({ asteroidCount: res.data.element_count })
       this.setState({ top: this.sortData(res.data.near_earth_objects)[0] })
@@ -23,6 +24,17 @@ class Fun extends React.Component {
     } catch (err) {
       this.props.history.push('/n/notfound')
     }
+  }
+
+  formatDate = () => {
+    let newUrl = this.state.url
+    newUrl = newUrl.split('-')
+    newUrl = newUrl.map(date => {
+      if (date.length === 1) return `0${date}`
+      return date
+    })
+    newUrl = newUrl.join('-')
+    this.setState({ url: newUrl })
   }
 
   sortData = (data) => {

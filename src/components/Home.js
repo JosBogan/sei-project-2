@@ -1,8 +1,5 @@
 import React from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
-
-const nasaToken = process.env.NASA_ACCESS_TOKEN
 
 
 class Home extends React.Component {
@@ -27,7 +24,6 @@ placeholder = () => {
 }
 
 render() {
-  console.log(this.state)
   return (
     <div className="hero-body">
       <div className="container">

@@ -39,9 +39,5 @@ class AsteroidCard extends React.Component {
 
 }
 
-// CHANGE TO A FUNCTIONAL COMPONENT
-
-
-
 
 export default AsteroidCard
